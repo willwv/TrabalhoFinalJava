@@ -2,8 +2,11 @@ package com.javaee.willwv.TrabalhoFinalJava.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.javaee.willwv.TrabalhoFinalJava.domain.Cliente;
 
+@Service
 public class ClienteServiceImpl  extends ServiceBase implements ClienteService{
 
 	@Override

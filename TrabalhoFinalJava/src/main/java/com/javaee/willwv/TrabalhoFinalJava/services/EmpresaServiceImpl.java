@@ -2,8 +2,11 @@ package com.javaee.willwv.TrabalhoFinalJava.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.javaee.willwv.TrabalhoFinalJava.domain.Empresa;
 
+@Service
 public class EmpresaServiceImpl extends ServiceBase implements EmpresaService{
 
 	@Override
