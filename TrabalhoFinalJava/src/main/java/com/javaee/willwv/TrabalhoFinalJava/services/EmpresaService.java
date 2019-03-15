@@ -6,7 +6,7 @@ import com.javaee.willwv.TrabalhoFinalJava.domain.Empresa;
 
 public interface EmpresaService {
 	Empresa ObterEmpresa(int id);	
-	Empresa CriarEmpresa(Empresa empresa);
+	Void CriarEmpresa(Empresa empresa);
 	List<Empresa> ListarEmpresas();
 	Void AtualizarEmpresa(String nome);
 	Void Empresa(int id);
