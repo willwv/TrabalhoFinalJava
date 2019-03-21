@@ -24,9 +24,3 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
-/.gitignore
-/.mvn/
-/mvnw
-/mvnw.cmd
-/pom.xml
-/src/
