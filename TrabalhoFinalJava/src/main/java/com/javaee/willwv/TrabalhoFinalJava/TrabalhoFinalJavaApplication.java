@@ -11,8 +11,8 @@ public class TrabalhoFinalJavaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TrabalhoFinalJavaApplication.class, args);
-		final String fromEmail = "mail@gmail.com";
-		final String password = "INSIRA_SENHA_AQUI";
+		final String fromEmail = "william.walder@gmail.com";
+		final String password = "Wt38815152007";
 		final String toEmail = "william.walder@gmail.com";
 		
 		System.out.println("Initializing email send");

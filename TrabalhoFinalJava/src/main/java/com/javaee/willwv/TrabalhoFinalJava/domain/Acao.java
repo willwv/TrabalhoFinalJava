@@ -6,8 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Acao {
-	private int Id;
-	private int IdComprador;
-	private int IdEmpresa;
-	private double Valor;
+	public int Id;
+	public int IdComprador;
+	public int IdEmpresa;
+	public double Valor;
 }
