@@ -37,13 +37,6 @@ public class ClienteController {
 		return clienteService.ListarClientes();
 	}
 	
-	@ApiOperation(value = "Obter CLientes", notes = "Esse endpoint retorna um Cliente.")
-	@GetMapping({"/{id}"})
-	@ResponseStatus(HttpStatus.OK)
-	public Cliente obterClientes(@PathVariable String id){
-		return clienteService.ObterCliente(id);
-	}
-	
 	@ApiOperation(value = "Criar cliente", notes = "Esse endpoint rcria um novo cliente.")
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)

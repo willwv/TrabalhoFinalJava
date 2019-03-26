@@ -27,16 +27,4 @@ public class MessageServiceImpl implements MessageService{
 	public void sendMessage(Acao acao) {
 		this.rabbitTemplate.convertAndSend(RabbitMQConfigVenderAcao.QUEUE_VENDER_ACAO_MESSAGES, acao);		
 	}
-
-	@Override
-	public void sendMessage(Cliente cliente) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void sendMessage(Empresa empresa) {
-		// TODO Auto-generated method stub
-		
-	}
 }

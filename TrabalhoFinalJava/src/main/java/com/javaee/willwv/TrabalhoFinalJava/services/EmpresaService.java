@@ -5,10 +5,7 @@ import java.util.Set;
 
 import com.javaee.willwv.TrabalhoFinalJava.domain.Empresa;
 
-public interface EmpresaService {
-	Empresa ObterEmpresa(String id);	
+public interface EmpresaService {	
 	Empresa CriarEmpresa(Empresa empresa);
 	Set<Empresa> ListarEmpresas();
-	Void AtualizarEmpresa(String nome);
-	Void Empresa(int id);
 }

@@ -23,22 +23,6 @@ public class ClienteServiceImpl  extends ServiceBase implements ClienteService{
 	public ClienteServiceImpl(ClienteRepository clienteRepository) {
 		this.clienteRepository = clienteRepository;
 	}
-	
-	@Override
-	public Cliente ObterCliente(String id) {
-		logger.info(id);
-		if(clienteRepository.existsById(id)) {
-			logger.info("opaaa");
-		}else {
-			logger.info("sasasa");
-		}
-		Optional<Cliente> clienteOptional = clienteRepository.findById(id);
-
-        if (!clienteOptional.isPresent()) {
-            throw new IllegalArgumentException("Cliente Not Found For ID value: " + id.toString() );
-        }
-        return clienteOptional.get();
-	}
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
@@ -51,24 +35,6 @@ public class ClienteServiceImpl  extends ServiceBase implements ClienteService{
 		Set<Cliente> listaClientes = new HashSet<>();
 		clienteRepository.findAll().iterator().forEachRemaining(listaClientes::add);
 		return listaClientes;
-	}
-
-	@Override
-	public Void AtualizarCliente(String nome) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Void DeletarCliente(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Void ComprarAcao(int idAcao, int idCliente, double valor) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

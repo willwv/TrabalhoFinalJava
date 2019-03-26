@@ -20,11 +20,6 @@ public class AcaoServiceImpl extends ServiceBase implements AcaoService {
 	public AcaoServiceImpl(AcaoRepository acaoRepository) {
 		this.acaoRepository = acaoRepository;
 	}
-	
-	@Override
-	public Acao ObterAcao(String id) {
-		return new Acao() {};
-	}
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
@@ -44,18 +39,6 @@ public class AcaoServiceImpl extends ServiceBase implements AcaoService {
 	public Acao AtualizarAcao(Acao acao) {
 		acao.DataUltimaVenda = new Date();
 		return CriarAcao(acao);
-	}
-
-	@Override
-	public void DeletarAcao(int id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void VenderAcao(int idAcao, int idCliente, double valor) {
-		// TODO Auto-generated method stub
-		;
 	}
 
 }
