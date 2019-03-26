@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.javaee.willwv.TrabalhoFinalJava.domain.Acao;
 import com.javaee.willwv.TrabalhoFinalJava.domain.RMQMessage;
 import com.javaee.willwv.TrabalhoFinalJava.domain.User;
+import com.javaee.willwv.TrabalhoFinalJava.services.AcaoService;
 import com.javaee.willwv.TrabalhoFinalJava.services.MessageService;
 import com.javaee.willwv.TrabalhoFinalJava.services.UserService;
 
@@ -27,10 +28,12 @@ public class UserController {
 	
 	private final UserService userService;
 	private final MessageService messageService;
+	private final AcaoService acaoService;
 	
-	public UserController(UserService userService, MessageService messageService) {
+	public UserController(UserService userService, MessageService messageService, AcaoService acaoService) {
 		this.userService = userService;
 		this.messageService = messageService;
+		this.acaoService = acaoService;
 	}
 	
 	@ApiOperation(value = "View List of Users", notes = "These endpoint will return all users")
@@ -47,10 +50,13 @@ public class UserController {
         return "Message sent";
     }*/
 	
-	@PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public String salvarAcao(@RequestBody Acao acao){
+	/*@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public void SalvarAcao(Acao acao) {
+		acaoService.CriarAcao(acao);
+	}
+   /* public String salvarAcao(@RequestBody Acao acao){
 		messageService.sendMessage(acao);
         return "Message sent";
-    }
+    }*/
 }

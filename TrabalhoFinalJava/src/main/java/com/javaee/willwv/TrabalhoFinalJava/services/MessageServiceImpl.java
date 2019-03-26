@@ -4,7 +4,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 
 import com.javaee.willwv.TrabalhoFinalJava.config.RabbitMQConfig;
-import com.javaee.willwv.TrabalhoFinalJava.config.RabbitMQConfigAcao;
+import com.javaee.willwv.TrabalhoFinalJava.config.RabbitMQConfigVenderAcao;
 import com.javaee.willwv.TrabalhoFinalJava.domain.Acao;
 import com.javaee.willwv.TrabalhoFinalJava.domain.Cliente;
 import com.javaee.willwv.TrabalhoFinalJava.domain.Empresa;
@@ -25,7 +25,7 @@ public class MessageServiceImpl implements MessageService{
 
 	@Override
 	public void sendMessage(Acao acao) {
-		this.rabbitTemplate.convertAndSend(RabbitMQConfigAcao.QUEUE_ACAO_MESSAGES, acao);		
+		this.rabbitTemplate.convertAndSend(RabbitMQConfigVenderAcao.QUEUE_VENDER_ACAO_MESSAGES, acao);		
 	}
 
 	@Override

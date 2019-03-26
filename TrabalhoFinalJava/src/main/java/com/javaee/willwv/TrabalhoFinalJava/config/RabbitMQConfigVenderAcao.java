@@ -19,15 +19,15 @@ import org.springframework.messaging.handler.annotation.support.DefaultMessageHa
 import org.springframework.messaging.handler.annotation.support.MessageHandlerMethodFactory;
 
 @Configuration
-public class RabbitMQConfigAcao extends RabbitMQConfigBase{
+public class RabbitMQConfigVenderAcao extends RabbitMQConfigBase{
 
-	public static final String QUEUE_ACAO_MESSAGES = "messages-acao-queue";
-    public static final String EXCHANGE_ACAO_MESSAGES = "messages-acao-exchange";
+	public static final String QUEUE_VENDER_ACAO_MESSAGES = "messages-vender-acao-queue";
+    public static final String EXCHANGE_VENDER_ACAO_MESSAGES = "messages-vender-acao-exchange";
     public static final String QUEUE_DEAD_ACAO_MESSAGES = "dead-messages-acao-queue";
  
     @Bean
     Queue messagesAcaoQueue() {
-    	return QueueBuilder.durable(QUEUE_ACAO_MESSAGES)
+    	return QueueBuilder.durable(QUEUE_VENDER_ACAO_MESSAGES)
                 .withArgument("x-dead-letter-exchange", "")
                 .withArgument("x-dead-letter-routing-key", QUEUE_DEAD_ACAO_MESSAGES)
                 .withArgument("x-message-ttl", 15000) //if message is not consumed in 15 seconds send to DLQ
@@ -41,12 +41,12 @@ public class RabbitMQConfigAcao extends RabbitMQConfigBase{
  
     @Bean
     Exchange messagesAcaoExchange() {
-        return ExchangeBuilder.topicExchange(EXCHANGE_ACAO_MESSAGES).build();
+        return ExchangeBuilder.topicExchange(EXCHANGE_VENDER_ACAO_MESSAGES).build();
     }
  
     @Bean
     Binding bindingAcao(Queue messagesQueue, TopicExchange messagesExchange) {
-        return BindingBuilder.bind(messagesQueue).to(messagesExchange).with(QUEUE_ACAO_MESSAGES);
+        return BindingBuilder.bind(messagesQueue).to(messagesExchange).with(QUEUE_VENDER_ACAO_MESSAGES);
     }   
     
 }

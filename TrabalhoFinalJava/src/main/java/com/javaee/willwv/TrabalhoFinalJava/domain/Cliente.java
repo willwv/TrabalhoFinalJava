@@ -1,11 +1,9 @@
 package com.javaee.willwv.TrabalhoFinalJava.domain;
+import org.springframework.data.annotation.Id;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class Cliente {
-	private String Nome;
-	private int Id;
+	@Id
+	public String Id;
+	public String Nome;
+	public String Email;
 }

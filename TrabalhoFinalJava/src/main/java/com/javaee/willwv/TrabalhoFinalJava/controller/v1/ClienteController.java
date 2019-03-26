@@ -1,9 +1,13 @@
 package com.javaee.willwv.TrabalhoFinalJava.controller.v1;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +33,21 @@ public class ClienteController {
 	@ApiOperation(value = "Lista de CLientes", notes = "Esse endpoint retorna uma lista com todos os CLientes")
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
-	public List<Cliente> obterTodosOsClientes(){
+	public Set<Cliente> obterTodosOsClientes(){
 		return clienteService.ListarClientes();
+	}
+	
+	@ApiOperation(value = "Obter CLientes", notes = "Esse endpoint retorna um Cliente.")
+	@GetMapping({"/{id}"})
+	@ResponseStatus(HttpStatus.OK)
+	public Cliente obterClientes(@PathVariable String id){
+		return clienteService.ObterCliente(id);
+	}
+	
+	@ApiOperation(value = "Criar cliente", notes = "Esse endpoint rcria um novo cliente.")
+	@PostMapping
+	@ResponseStatus(HttpStatus.OK)
+	public Cliente criarCliente(@RequestBody Cliente cliente){
+		return clienteService.CriarCliente(cliente);
 	}
 }
