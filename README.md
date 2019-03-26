@@ -2,6 +2,7 @@
 -----------------------------------------------Requisitos-----------------------------------------------
 
 Requisito: Ter Docker instalado na máquina.
+
 Requisito: Ter a IDE Eclipse instalada na máquina.
 
 ------------------------------------------------Execução------------------------------------------------
